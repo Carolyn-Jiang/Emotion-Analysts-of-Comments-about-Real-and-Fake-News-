@@ -26,7 +26,7 @@ clean.py: this file contain a class "clean" used in further data pre-processing.
 data_pre-processing.py: data process visualization and Unigran, Bigram, Trigram analysis. \
 ML-method.py: build 8 machine learning method and resulit visualization. \
 LSTM.py: build LSTM model and result visualization. \
-RNN.py: another model with accuracy 99.4% \
+RNN.py: another model(rnn.LSTM) with accuracy 99.4% \
 Fake-Real-News-Detective-Model.ipynb: Partial result display.
 
 
