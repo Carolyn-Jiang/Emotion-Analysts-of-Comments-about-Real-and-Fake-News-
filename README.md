@@ -28,14 +28,4 @@ model efficiency using data outside the training and made corresponding adjustme
 existing models to determine whether the news is real or fake. Get the comments corresponding to each news item from the Twitter account of 
 the news website and label the comments. Use labeled comments dataset for emotion analysts to find out if people feel different emotions 
 towards the real news compared to fake news.
------------------------------------------------------
-| 1. |      Data Processing on Kaggle dataset       |
-| 2. |      Build 8 Machine Learning Method         |
-| 3. |    Model Validation with Training Dataset    |
-| 4. |    Build LSTM Moderl with GloVe embedding    |
-| 5. |        Scrap News from AP-Fact-Check         |
-| 6. |       Model Validation with Real News        |
-| 7. |         Scrap News from New Website          |
-| 8. | Scrap News comments from its Twitter account |
-| 9. |       Emotion Analyst on the comments        |
------------------------------------------------------
+
