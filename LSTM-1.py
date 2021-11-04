@@ -159,3 +159,66 @@ plt.figure(figsize = (10,8))
 sns.heatmap(cm_DL,cmap= "Blues", linecolor = 'black' , xticklabels = ['Fake','Real'] , yticklabels = ['Fake','Real'])
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
+
+#####################################################################################
+#                                                                                   #
+#                                     Test Part                                     #
+#                                                                                   #
+#####################################################################################
+
+df_test = pd.read_csv('fake_or_real_news.csv')
+
+df_test['text'] = df_test['text'] + " " + df_test['title']
+
+import clean
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+clean_text = []
+for i in df['text']:
+    data_cleaning = clean.clean(text = i)
+    clean_text.append(data_cleaning.denoise_text(i))
+del df['text']
+
+label = []
+for i in df_test['label']:
+    if i == 'FAKE':
+        label.append(0)
+    elif i == 'REAL':
+        label.append(1)
+    else:
+        label.append2
+        
+df = pd.DataFrame({'text':clean_text,'label':label})
+
+x_test2 = df['text']
+y_test2 = df['label']
+
+max_features = 10000
+maxlen = 101
+
+tokenizer = text.Tokenizer(num_words=max_features)
+tokenizer.fit_on_texts(x_test2)
+tokenized_test2 = tokenizer.texts_to_sequences(x_test2)
+x_test2 = sequence.pad_sequences(tokenized_test2, maxlen=maxlen)
+
+pred = model.predict(x_test2)
+pred[:5]
+
+pred = list(pred)
+test_result = []
+for i in range(len(pred)):
+    test_result.append(pred[i][0])
+
+confusion = pd.DataFrame({'Pred':test_result, 'Truth':list(y_test2)})
+confusion['binary_pred'] = (confusion['Pred'] > 0.5).astype(int)
+
+cm_DL = confusion_matrix(confusion['Truth'],confusion['binary_pred'])
+cm_DL
+
+print("Accuracy of the model on Other Testing Data is - " , model.evaluate(x_test2,y_test2)[1]*100 , "%")
+
+plt.figure(figsize = (10,8))
+sns.heatmap(cm_DL,cmap= "Blues", linecolor = 'black' , xticklabels = ['Fake','Real'] , yticklabels = ['Fake','Real'])
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
