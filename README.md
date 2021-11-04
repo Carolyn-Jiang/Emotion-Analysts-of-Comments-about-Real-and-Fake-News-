@@ -33,5 +33,5 @@ web-scraping-sample.py: A sample code of data collecting.
 
 
 To be continued \
-Update October 10, 2021
+Update October 10, 2021 \
 Update November 3, 2021
