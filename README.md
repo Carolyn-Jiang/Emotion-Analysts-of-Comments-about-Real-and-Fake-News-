@@ -17,21 +17,11 @@ We expect this work can make the following contributions: \
 3. Data Source: https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset
 
 
-4. Method: Compared the performance of nine machine learning models (Logistic Regression, Random Forest, Decision Tree, Multilayer Perceptron, Adaptive Gradient Boost, SVM, Native Bayes) in Kaggle dataset named “Fake and real news”. Used K-fold cross-validation to choose the best models(MLP Native Bayes).  Built an LSTM model using GloVe embedding with accuracy around 95% (After 30 Epoch). Use data out of the original dateset. Tested the model efficiency using data outside the training and made corresponding adjustments to the model. Scraped news from news websites and using existing models to determine whether the news is real or fake. Get the comments corresponding to each news item from the Twitter account of the news website and label the comments. Use labeled comments dataset for emotion analysts to find out if people feel different emotions towards the real news compared to fake news. 
+4. Method: Cleaning a 30, 000 news dataset and built a deep learning model (Bi - LSTM) using GloVe embedding. Use data outside the training set to test the model's efficiency and make corresponding adjustments based on the results. Scraping news from the internet and using the model we got to test if the news is real and collect tweets from Twitter that discuss the news. Use ANEWS as the dictionary to analyze tweets' emotions and see the impact fake news has on people's emotions.
 
-
-5. File description 
-
-clean.py: this file contain a class "clean" used in further data pre-processing. \
-data_pre-processing.py: data process visualization and Unigran, Bigram, Trigram analysis. \
-ML-method.py: build 8 machine learning method and resulit visualization. \
-LSTM.py: build LSTM model and result visualization. Accuracy 94\% \
-RNN.py: This model has issue. \
-Fake_Real_News_Detectivs_Data_Visualization- Machine_Learning_Model_Train-Test.ipynb: Training and testing results of Machine Learning models. \
-Fake_Real_News_Detective_Data_Visualization_LSTM_Train- Test: Training and testing results of LSTM. \
-web-scraping-sample.py: A sample code of data collecting.
 
 
 To be continued \
 Update October 10, 2021 \
-Update November 3, 2021
+Update November 3, 2021 \
+Updata Feb 24, 2022
